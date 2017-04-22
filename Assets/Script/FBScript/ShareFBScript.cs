@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class ShareFBScript : MonoBehaviour {
 
-	private const string IMAGE_FOR_FB = "http://imgur.com/a/coEQO";
-	private const string LINK_FOR_FB =	"http://www.imi.co.th/apps/goatstrike/";
+	private const string IMAGE_FOR_FB = "https://www.imageupload.co.uk/images/2017/04/22/FBShareCover.jpg";
+	private const string LINK_FOR_FB = "https://www.facebook.com/GameDoubleD/?pnref=story";
 
     string username;
 
@@ -16,7 +16,7 @@ public class ShareFBScript : MonoBehaviour {
     {
         username = PlayerDataModel.playerName;
 
-        if(username == string.Empty)
+        if(username.ToLower().Replace(" ", string.Empty) == "unknowoden")
         {
             username = "My Oden cart";
         }
@@ -24,7 +24,7 @@ public class ShareFBScript : MonoBehaviour {
         string itemName = GameObject.Find("ItemNameTxt").GetComponent<Text>().text;
 
         string shareTitle = "Congrantulations! " + username + " has unlock new item";
-        string description = username + "has unlocked " + itemName + ". Did you got this item?";
+        string description = username + " has unlocked " + itemName + ". Did you got this item?";
 
         Uri photo = new Uri(IMAGE_FOR_FB);
         FB.ShareLink(new Uri(LINK_FOR_FB), shareTitle, description, photo, callback: ShareCallback);
