@@ -78,6 +78,7 @@ public class OdenScript : MonoBehaviour {
         {
             int boiledTimeSeconds = (Int32)(TimeStamp - createTime).TotalSeconds;
             timeLeft -= boiledTimeSeconds;
+            TimeStamp = createTime;
         }
 
         GenerateSpecificInfo();
