@@ -71,7 +71,7 @@ public class SavePlayerDataManager : MonoBehaviour {
     static void CreateNewDataCollection()
     {
         PlayerDataModel.playerName = "Unknow Oden";
-        PlayerDataModel.TotalCoin = 5000;
+        PlayerDataModel.TotalCoin = 15000;
         PlayerDataModel.TotalPotSlot = 3;
         PlayerDataModel.UsedPotSlot = 0;
 
